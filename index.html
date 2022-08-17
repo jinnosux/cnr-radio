@@ -25,12 +25,10 @@ $(document).ready(function(){
 		$.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
 			var text = `Now Playing:<br/>${data.icestats.source.title}<br/>
 				    <br />Listeners:<br/>${data.icestats.source.listeners}`
-            var newtext = `data-album="${data.icestats.source.title}"
-                data-artist="DJ Lucas2232"
-                `
-			$(".play").attr(newtext);
+            var newtext = `${data.icestats.source.title}`
+			$("#player").data('title', `${data.icestats.source.title}`);
 		});
-	},5000);
+	},500);
 
 	// $("#jquery_jplayer_1").jPlayer({
 	// 	ready: function (event) {
@@ -59,14 +57,15 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+
     <div class="mhn-player">
         <div class="album-art"></div>
         <div class="play-list">
-            <a href="#" class="play"
+            <a href="#" class="play" id="player"
                 data-id="1"
                 data-album=""
-                data-artist="DJ Lucas2232"
-                data-title="Title here"
+                data-artist="No DJ Active"
+                data-title=""
                 data-albumart=""
                 data-url="https://radio.cnr.ng/broadband/stream"></a>
         
@@ -93,9 +92,6 @@ $(document).ready(function(){
         </div>
         
         </div>
-    </div>
-    <div class="text">
-        
     </div>
 <!-- <div id="container" style="margin:auto; width: 194px; padding-top:30px;height: 100%;">
 	<div id="logo_container"></div>
