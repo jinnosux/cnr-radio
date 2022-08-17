@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,72 +10,29 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="player.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-$(document).ready(function(){
-
-	var stream = {
-		title: "NG Radio Stream",
-		mp3: "https://radio.cnr.ng/broadband/stream"
-	},
-	ready = false;
-	
-	var streamrefresh = setInterval(function(){
-/*		$.getJSON('https://fivem.cnr.ng/radio/status-json.xsl', function(data) {*/
-		$.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
-			var text = `Now Playing:<br/>${data.icestats.source.title}<br/>
-				    <br />Listeners:<br/>${data.icestats.source.listeners}`
-            var newtext = `${data.icestats.source.title}`
-			$("#player").data('title', `${data.icestats.source.title}`);
-            $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
-		});
-	},500);
-
-	// $("#jquery_jplayer_1").jPlayer({
-	// 	ready: function (event) {
-	// 		ready = true;
-	// 		$(this).jPlayer("setMedia", stream);
-	// 	},
-	// 	pause: function() {
-	// 		$(this).jPlayer("clearMedia");
-	// 	},
-	// 	error: function(event) {
-	// 		if(ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {
-	// 			// Setup the media stream again and play it.
-	// 			$(this).jPlayer("setMedia", stream).jPlayer("play");
-	// 		}
-	// 	},
-	// 	swfPath: "../../dist/jplayer",
-	// 	supplied: "mp3",
-	// 	preload: "none",
-	// 	wmode: "window",
-	// 	useStateClassSkin: true,
-	// 	autoBlur: false,
-	// 	keyEnabled: true
-	// });
-});
-//]]> -->
-</script>
 </head>
 <body>
+    <div class="intro">
+        <img src="logo.png"></img>
+    </div>
 
     <div class="mhn-player">
         <div class="album-art"></div>
         <div class="play-list">
-            <a href="#" class="play" id="player"
+            <a href="#" class="play"
                 data-id="1"
                 data-album=""
-                data-artist="No DJ Active"
+                data-artist=""
                 data-title=""
                 data-albumart=""
                 data-url="https://radio.cnr.ng/broadband/stream"></a>
-        
         </div>
+        
         <div class="audio"></div>
-        <div class="current-info">
-            <div class="song-artist"></div>
+        <div class="current-info" >
+            <div class="song-artist" id="current-dj"></div>
             <!-- <div class="song-album"></div> -->
-            <div class="song-title"></div>
+            <div class="song-title" id="current-info"></div>
         </div>
         <div class="controls">
         <!-- <a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a> -->

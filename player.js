@@ -31,8 +31,8 @@ var Audio = {
 
 				album=album?'<span class="album">'+album+'</span>':'Unknown Album';
 				albumart=albumart?'<img src="'+albumart+'">':'';
-				artist=artist?'<span class="song-artist">'+artist+'</span>':'Unknown Artist';
-				title=title?'<div class="song-title">'+title+'</div>':'Unknown Title';
+				artist=artist?'<span class="song-artist">'+artist+'</span>':'';
+				title=title?'<div class="song-title">'+title+'</div>':'Loading...';
 
 				$(this).html('<div class="album-thumb pull-left">'+albumart+'</div><div class="songs-info pull-left">'+title+'<div class="songs-detail">'+artist+' - '+album+'</div></div></div>');
 			});
@@ -43,9 +43,9 @@ var Audio = {
 			currentTrack = $('.play-list a').index($('.play-list .active'))+1;
 			$('.play-position').text(currentTrack+' / '+totalTrack);
 			albumart=albumart?'<img src="'+albumart+'">':''; 
-			album=album?album:'Unknown Album';
-			title=title?title:'Unknown Title';
-			artist=artist?artist:'Unknown Artist';
+			album=album?album:'';
+			title=title?title:'Loading...';
+			artist=artist?artist:'';
 			$('.album-art').html(albumart);
 			$('.current-info .song-album').html('<i class="fa fa-music"></i> '+album);
 			$('.current-info .song-title').html('<i class="fa fa-headphones"></i> '+title);
@@ -161,6 +161,13 @@ var Audio = {
 		bar = (current/e[0].duration)*100;
 		$('.progress .bar').css('width',bar+'%');
 		
+        $.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
+            // $("#current-dj").html('<i class="fa fa-user"></i> ' + `${data.icestats.source.dj}`);
+            $("#current-dj").html('<i class="fa fa-user"></i> ' + "No DJ Active");
+			$("#current-info").html('<i class="fa fa-headphones"></i> ' + `${data.icestats.source.title}`);
+            $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
+		});
+        
 		},1000);
 
 		var totalDur = setInterval(function(t){

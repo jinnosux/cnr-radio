@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 body{
 	margin:0;
 	color:#444;
 	background:url(https://cdn.discordapp.com/attachments/822768766341087282/1005949192864276550/unknown.png) #000;
+    background-repeat: no-repeat;
 	font:300 18px/18px Roboto, sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
@@ -35,7 +37,7 @@ body{
     padding:15px 15px 0px 15px;
 	position:relative;
 	margin:55px auto 0;
-	background:rgba(0,0,0,.9);
+	background:rgba(0,0,0,.7);
 	box-shadow:0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21);
 }
 .mhn-player .album-art,
@@ -145,8 +147,9 @@ body{
 	right:30px;
 	color:#ccc;
 	bottom:160px;
-	margin-left:-15px;
-	margin-right:-15px;
+	margin-left:-5px;
+	margin-right:-5px;
+    margin-bottom: 5px;
 	position:absolute;
 	text-shadow:0 2px 4px #000;
 }
@@ -154,9 +157,10 @@ body{
 	margin-top:10px;
 }
 .mhn-player .current-info .song-title{
-	font-size:24px;
+	font-size:22px;
 	margin-top:10px;
 	font-weight:400;
+    line-height: 1.5;
 }
 .mhn-player .current-info .fa{
 	min-width:30px;
@@ -336,3 +340,36 @@ body{
 .volume[data-css="0.9"]::-moz-range-track{background-size:90% 100%}
 .volume[data-css="1"]::-webkit-slider-runnable-track{background-size:100% 100%}
 .volume[data-css="1"]::-moz-range-track{background-size:100% 100%}
+
+
+.intro{
+    text-align: center;
+}
+
+.intro h3{
+    font-weight: 300;
+	font-size: 40px;
+	line-height: 1.2;
+	margin-bottom: 35px;
+    color: white;
+}
+
+.intro img{
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+.intro img{
+    width: 250px;
+}
+
+.mhn-player{
+    margin-top: 20px;
+}
+
+}
