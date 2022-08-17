@@ -27,6 +27,7 @@ $(document).ready(function(){
 				    <br />Listeners:<br/>${data.icestats.source.listeners}`
             var newtext = `${data.icestats.source.title}`
 			$("#player").data('title', `${data.icestats.source.title}`);
+            $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
 		});
 	},500);
 
@@ -79,7 +80,8 @@ $(document).ready(function(){
         <div class="controls">
         <!-- <a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a> -->
         <div class="duration clearfix">
-            <span class="pull-left play-position"></span>
+            <span class="pull-left" id="listeners"></span>
+            <!-- <span class="pull-left play-position"></span> -->
             <span class="pull-right"><span class="play-current-time">00:00</span>
         </div>
         <div class="progress"><div class="bar"></div></div>
