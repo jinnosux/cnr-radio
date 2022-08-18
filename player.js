@@ -51,7 +51,7 @@ var Audio = {
 			$('.current-info .song-title').html('<i class="fa fa-headphones"></i> '+title);
 			$('.current-info .song-artist').html('<i class="fa fa-user"></i> '+artist);
 			if(mp3)
-			$('.audio').html('<audio class="music" data-id="'+id+'" src="'+mp3+'"></audio>');
+			$('.audio').html('<audio class="music" preload="auto" data-id="'+id+'" src="'+mp3+'"></audio>');
 		}
 	},
 	player:function(){
@@ -74,6 +74,13 @@ var Audio = {
 				Audio.playlist.hide();
 			});
 		});
+		$('.album-art').on('click',function(e){
+			e.preventDefault();
+			if($('.audio').is(':empty')){
+				$('.play-list a:first-child').click();
+			}
+		});
+
 		$('.play-pause').on('click',function(e){
 			e.preventDefault();
 			if($('.audio').is(':empty')){
@@ -170,6 +177,12 @@ var Audio = {
         
 		},1000);
 
+		$(".album-art").css({"-webkit-animation": "rotating 2s linear infinite",
+		"-moz-animation": "rotating 2s linear infinite",
+		"-ms-animation": "rotating 2s linear infinite",
+		"-o-animation": "rotating 2s linear infinite",
+		"animation": "rotating 2s linear infinite"});
+
 		var totalDur = setInterval(function(t){
 			if($('.audio .music')[0].readyState>0){
 				total = e[0].duration;
@@ -182,10 +195,12 @@ var Audio = {
 	pause:function(e){
 		e.trigger('pause');
 		$('.play-pause').removeClass('active');
+		$(".album-art").css('animationPlayState','paused')
 	},
 	stop:function(e){
 		e.trigger('pause').prop('currentTime',0);
 		$('.play-pause').removeClass('active');
+		$(".album-art").css('animationPlayState','paused')
 	},
 	mute:function(e){
 		prop('muted',!e.prop('muted'));

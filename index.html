@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Welcome to CNR:NG Radio</title>
+<title>CNR:NG Radio</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="css.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -13,7 +14,7 @@
 </head>
 <body>
     <div class="intro">
-        <img src="logo.png"></img>
+        <a href="https://cnr.ng" target=_blank><img src="logo.png"></img></a>
     </div>
 
     <div class="mhn-player">
@@ -24,59 +25,30 @@
                 data-album=""
                 data-artist=""
                 data-title=""
-                data-albumart=""
+                data-albumart="vinyl-darker.png"
                 data-url="https://radio.cnr.ng/broadband/stream"></a>
         </div>
-        
         <div class="audio"></div>
         <div class="current-info" >
             <div class="song-artist" id="current-dj"></div>
-            <!-- <div class="song-album"></div> -->
             <div class="song-title" id="current-info"></div>
         </div>
+
         <div class="controls">
-        <!-- <a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a> -->
         <div class="duration clearfix">
             <span class="pull-left" id="listeners"></span>
-            <!-- <span class="pull-left play-position"></span> -->
             <span class="pull-right"><span class="play-current-time">00:00</span>
         </div>
+
         <div class="progress"><div class="bar"></div></div>
         <div class="action-button">
-            <!-- <a href="#" class="prev"><i class="fa fa-step-backward"></i></a> -->
             <a href="#" class="play-pause"><i class="fa fa-pp"></i></a>
             <a href="#" class="stop"><i class="fa fa-stop"></i></a>
-            <!-- <a href="#" class="next"><i class="fa fa-step-forward"></i></a> -->
             <input type="range" class="volume" min="0" max="1" step="0.1" value="0.5" data-css="0.5">
         </div>
         
         </div>
     </div>
-<!-- <div id="container" style="margin:auto; width: 194px; padding-top:30px;height: 100%;">
-	<div id="logo_container"></div>
-	<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-		<div id="jp_container_1" class="jp-audio-stream" role="application" aria-label="media player">
-		<div id="metainfo" style="font-size: 10px;">Loading...</div>
-		<div class="jp-type-single">
-			<div class="jp-gui jp-interface">
-				<div class="jp-controls">
-					<button class="jp-play" role="button" tabindex="0">play</button>
-				</div>
-				<div class="jp-volume-controls">
-					<button class="jp-mute" role="button" tabindex="0">mute</button>
-					<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
-					<div class="jp-volume-bar">
-						<div class="jp-volume-bar-value"></div>
-					</div>
-				</div>
-			</div>
-				<div class="jp-no-solution">
-				<span>Update Required</span>
-				To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-			</div>
-		</div>
-	</div>
-</div> -->
 </body>
 
 </html>
