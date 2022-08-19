@@ -183,6 +183,12 @@ var Audio = {
 		"-o-animation": "rotating 2s linear infinite",
 		"animation": "rotating 2s linear infinite"});
 
+		$(".needle img").css({"-webkit-animation": "rotating2 2s forwards",
+		"-moz-animation": "rotating2 2s forwards ",
+		"-ms-animation": "rotating2 2s forwards",
+		"-o-animation": "rotating2 2s forwards",
+		"animation": "rotating2 2s forwards",})
+
 		var totalDur = setInterval(function(t){
 			if($('.audio .music')[0].readyState>0){
 				total = e[0].duration;
@@ -201,6 +207,11 @@ var Audio = {
 		e.trigger('pause').prop('currentTime',0);
 		$('.play-pause').removeClass('active');
 		$(".album-art").css('animationPlayState','paused')
+		$(".needle img").css({"-webkit-animation": "rotating3 2s forwards",
+		"-moz-animation": "rotating3 2s forwards ",
+		"-ms-animation": "rotating3 2s forwards",
+		"-o-animation": "rotating3 2s forwards",
+		"animation": "rotating3 2s forwards",})
 	},
 	mute:function(e){
 		prop('muted',!e.prop('muted'));
