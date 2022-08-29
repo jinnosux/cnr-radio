@@ -51,7 +51,7 @@ var Audio = {
 			$('.current-info .song-title').html('<i class="fa fa-headphones"></i> '+title);
 			$('.current-info .song-artist').html('<i class="fa fa-user"></i> '+artist);
 			if(mp3)
-			$('.audio').html('<audio class="music" preload="auto" data-id="'+id+'" src="'+mp3+'"></audio>');
+			$('.audio').html('<audio class="music" data-id="'+id+'" src="'+mp3+'"></audio>');
 		}
 	},
 	player:function(){
@@ -169,7 +169,6 @@ var Audio = {
 		$('.progress .bar').css('width',bar+'%');
 		
         $.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
-            // $("#current-dj").html('<i class="fa fa-user"></i> ' + `${data.icestats.source.dj}`);
             $("#current-dj").html('<i class="fa fa-user"></i> ' + "No DJ Active");
 			$("#current-info").html('<i class="fa fa-headphones"></i> ' + `${data.icestats.source.title}`);
             $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
@@ -183,11 +182,11 @@ var Audio = {
 		"-o-animation": "rotating 2s linear infinite",
 		"animation": "rotating 2s linear infinite"});
 
-		$(".needle img").css({"-webkit-animation": "rotating2 2s forwards",
-		"-moz-animation": "rotating2 2s forwards ",
-		"-ms-animation": "rotating2 2s forwards",
-		"-o-animation": "rotating2 2s forwards",
-		"animation": "rotating2 2s forwards",})
+		$(".needle img").css({"-webkit-animation": "rotating2 1.5s forwards",
+		"-moz-animation": "rotating2 1.5s forwards ",
+		"-ms-animation": "rotating2 1.5s forwards",
+		"-o-animation": "rotating2 1.5s forwards",
+		"animation": "rotating2 1.5s forwards",})
 
 		var totalDur = setInterval(function(t){
 			if($('.audio .music')[0].readyState>0){
@@ -207,11 +206,11 @@ var Audio = {
 		e.trigger('pause').prop('currentTime',0);
 		$('.play-pause').removeClass('active');
 		$(".album-art").css('animationPlayState','paused')
-		$(".needle img").css({"-webkit-animation": "rotating3 2s forwards",
-		"-moz-animation": "rotating3 2s forwards ",
-		"-ms-animation": "rotating3 2s forwards",
-		"-o-animation": "rotating3 2s forwards",
-		"animation": "rotating3 2s forwards",})
+		$(".needle img").css({"-webkit-animation": "rotating3 1.5s forwards",
+		"-moz-animation": "rotating3 1.5s forwards ",
+		"-ms-animation": "rotating3 1.5s forwards",
+		"-o-animation": "rotating3 1.5s forwards",
+		"animation": "rotating3 1.5s forwards",})
 	},
 	mute:function(e){
 		prop('muted',!e.prop('muted'));
@@ -254,3 +253,4 @@ var Audio = {
 		}
 	}
 }
+
