@@ -2,7 +2,7 @@
 body{
 	margin:0;
 	color:#444;
-	background:url(/assets/images/bg.png) #000;
+	background:url('../images/bg.png') #000;
     background-repeat: no-repeat;
 	font:300 18px/18px Roboto, sans-serif;
 }
@@ -42,7 +42,7 @@ body{
 }
 .mhn-player .album-art,
 .mhn-player .album-thumb{
-	background:url(/assets/images/vinyl.png);
+	background:url('../images/vinyl.png');
     background-repeat:no-repeat;
     background-position: center;
 	background-size: 100%;
