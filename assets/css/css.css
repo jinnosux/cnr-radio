@@ -97,11 +97,13 @@ body{
 	  -webkit-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
+	  transform-origin: 40px 40px;
 	}
 	to {
-	  -webkit-transform: rotate(8deg);
-	  -o-transform: rotate(8deg);
-	  transform: rotate(8deg);
+	  -webkit-transform: rotate(10deg);
+	  -o-transform: rotate(10deg);
+	  transform: rotate(10deg);
+	  transform-origin: 40px 40px;
 	}
   }
   @keyframes rotating2 {
@@ -111,34 +113,39 @@ body{
 	  -webkit-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
+	  transform-origin: 40px 40px;
 	}
 	to {
-	  -ms-transform: rotate(8deg);
-	  -moz-transform: rotate(8deg);
-	  -webkit-transform: rotate(8deg);
-	  -o-transform: rotate(8deg);
-	  transform: rotate(8deg);
+	  -ms-transform: rotate(10deg);
+	  -moz-transform: rotate(10deg);
+	  -webkit-transform: rotate(10deg);
+	  -o-transform: rotate(10deg);
+	  transform: rotate(10deg);
+	  transform-origin: 40px 40px;
 	}
   }
   @-webkit-keyframes rotating3 /* Safari and Chrome */ {
 	from {
-	  -webkit-transform: rotate(8deg);
-	  -o-transform: rotate(8deg);
-	  transform: rotate(8deg);
+	  -webkit-transform: rotate(10deg);
+	  -o-transform: rotate(10deg);
+	  transform: rotate(10deg);
+	  transform-origin: 40px 40px;
 	}
 	to {
 	  -webkit-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
+	  transform-origin: 40px 40px;
 	}
   }
   @keyframes rotating3 {
 	from {
-	  -ms-transform: rotate(8deg);
-	  -moz-transform: rotate(8deg);
-	  -webkit-transform: rotate(8deg);
-	  -o-transform: rotate(8deg);
-	  transform: rotate(8deg);
+	  -ms-transform: rotate(10deg);
+	  -moz-transform: rotate(10deg);
+	  -webkit-transform: rotate(10deg);
+	  -o-transform: rotate(10deg);
+	  transform: rotate(10deg);
+	  transform-origin: 40px 40px;
 	}
 	to {
 	  -ms-transform: rotate(0deg);
@@ -146,6 +153,7 @@ body{
 	  -webkit-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
+	  transform-origin: 40px 40px;
 	}
   }
   .rotating {
@@ -434,24 +442,22 @@ body{
 
 @media only screen and (max-width: 1000px) {
 .intro img{
-    width: 225px;
-	padding-top: 30px;
+    width: 255px;
+	padding-top: 40px;
+	padding-bottom: 10px;
 }
 
 .mhn-player{
     margin-top: 25px;
 }
-
 }
 
 
 .needle{
-
       position: absolute;
       top: 3px;
       left: 287px;
 	  z-index: 50;
-
 }
 
 .needle img{
