@@ -169,9 +169,12 @@ var Audio = {
 		$('.progress .bar').css('width',bar+'%');
 		
         $.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
-            $("#current-dj").html('<i class="fa fa-user"></i> ' + "No DJ Active");
 			$("#current-info").html('<i class="fa fa-headphones"></i> ' + `${data.icestats.source.title}`);
             $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
+		});
+
+		$.getJSON('https://radio.cnr.ng/game_server_data/djstatus.json?ts='+ Math.round((new Date()).getTime() / 1000), function(data) {
+        $("#current-dj").html('<i class="fa fa-user"></i> DJ ' + `${data.currentdj}`);
 		});
         
 		},1000);
