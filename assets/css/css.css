@@ -303,9 +303,14 @@ body{
 	text-align:center;
 	display:inline-block;
 }
-.mhn-player .controls .action-button a:hover,
+.mhn-player .controls .action-button a:hover{
+	color: #fff;
+}
 .mhn-player .controls .action-button a.active{
-	color:#ccc;
+	color:rgb(37, 155, 1);
+}
+.mhn-player .controls .action-button .stop:hover{
+	color:crimson;
 }
 .mhn-player .controls .action-button a .fa{
 	font-size:inherit;
