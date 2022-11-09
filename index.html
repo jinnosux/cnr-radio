@@ -1,66 +1,112 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<!-- Meta tags -->
-<meta charset="utf-8" />
-<title>CNR:NG - Radio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <title>CNR:NG - Radio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-<!-- Links/Scripts -->
-<link href="assets/css/css.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css" />
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/player.js"></script>
+    <!-- Links/Scripts -->
+    <link href="assets/css/css.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/player.js"></script>
+
 
 </head>
+
 <body>
+    <div class="header">
+        <a href="https://cnr.ng/" target="_blank" class="logo"><img src="./assets/images/logo.png" style="width:230px;padding:9px;"></a>
+        <div class="header-right">
+          <a href="https://forums.cnr.ng/" target="_blank">Forums</a>
+          <a href="#events" onclick="show1()">Events</a>
+          <a href="#dj" onclick="show2()">our DJ team</a>
+        </div>
+    </div>
+<!--       
     <div class="intro">
         <a href="https://cnr.ng" target=_blank><img src="assets/images/logo.png"></img></a>
-    </div>
+    </div> -->
+    <div class="popup" id="popup1">
+        <h3 style="margin-top: 30px;">Events</h3>
+        <h4>(Rashon's) Punkery Show - 4:20 EST</h4>
+        <h3 style="margin-top: 30px;">In-game commands</h3>
+        <h4>Use <span>/radio</span> in-game to tune in</h4>
+        <h4>Use <span>/radioinfo</span> to find out about current dj and song</h4>
+        <a href="#" onclick="hide1()">Close</a>
+      </div>
+      
+      <div class="popup" id="popup2">
+        <h3>Radio mgmt</h3>
+        <h4>Tony.Solar | Decoy</h4>
+        <h3>DJ team</h3>
+        <h4>Assassin | BBird | Codeshadow | Conceited  </h4>
+        <h4>decoy | foxyproxy101 | Ismaxl_ | Fusion</h4>
+        <h4>jftw | jinnosuke | Luffy | Lucas2231</h4>
+        <h4>Oggy | Rashon | Tony.Solar | vlaj</h4>
+        <a href="#" onclick="hide2()">Close</a>
+      </div>
+    
 
     <div class="mhn-wrapper">
-    <div class="mhn-player">
-        <div class="needle"><img src="assets/images/needle.png"></img></div>
-        <div class="album-art"></div>
-        <div class="play-list">
-            <a href="#" class="play"
-                data-id="1"
-                data-album=""
-                data-artist=""
-                data-title=""
-                data-albumart="assets/images/vinyl-darker.png"
-                data-url="https://radio.cnr.ng/broadband/stream"></a>
-        </div>
-        <div class="audio"></div>
-        <div class="current-info" >
-            <div class="song-artist" id="current-dj"></div>
-            <div class="song-title" id="current-info"></div>
-        </div>
+        <!-- <div class="left-section">
+            <h2>In-game info:</h2>
+            <h4>use <span>/radio</span> to tune in</h4>
+            <h4 style="margin-bottom: 60px;">use <span>/radioinfo</span> to check current DJ/Song</h4>
+            <h2>Events:</h2>
+            <h4>Punkery Show - Sunday 4:20 CET</h4>
+        </div> -->
+        <div class="mhn-player">
+            <div class="needle"><img src="assets/images/needle.png"></img></div>
+            <div class="album-art"></div>
+            <div class="play-list">
+                <a href="#" class="play" data-id="1" data-album="" data-artist="" data-title=""
+                    data-albumart="assets/images/vinyl-darker.png" data-url="https://radio.cnr.ng/broadband/stream"></a>
+            </div>
+            <div class="audio"></div>
+            <div class="current-info">
+                <div class="song-artist" id="current-dj"></div>
+                <div class="song-title" id="current-info"></div>
+            </div>
 
-        <div class="controls">
-        <div class="duration clearfix">
-            <span class="pull-left" id="listeners"></span>
-            <span class="pull-right"><span class="play-current-time">00:00</span>
-        </div>
+            <div class="controls">
+                <div class="duration clearfix">
+                    <span class="pull-left" id="listeners"></span>
+                    <span class="pull-right"><span class="play-current-time">00:00</span>
+                </div>
 
-        <div class="progress"><div class="bar"></div></div>
-        <div class="action-button">
-            <a href="#" class="play-pause"><i class="fa fa-pp"></i></a>
-            <a href="#" class="stop"><i class="fa fa-stop"></i></a>
-            <input type="range" class="volume" min="0" max="1" step="0.1" value="0.5" data-css="0.5">
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+                <div class="action-button">
+                    <a href="#" class="play-pause"><i class="fa fa-pp"></i></a>
+                    <a href="#" class="stop"><i class="fa fa-stop"></i></a>
+                    <input type="range" class="volume" min="0" max="1" step="0.1" value="0.5" data-css="0.5">
+                </div>
+            </div>
         </div>
-        
-        </div>
-    </div>
+    </div> -->
     </div>
     <footer class="footer">
         <p>2020-2022 © Cops and Robbers: Next Generation. All Rights Reserved. <br>
-        CnR:NG is not affiliated with or endorsed by CrazyBob, Rockstar North, Take-Two Interactive or other rights-holders.</p>
+            CnR:NG is not affiliated with or endorsed by CrazyBob, Rockstar North, Take-Two Interactive or other
+            rights-holders.</p>
     </footer>
 </body>
+<script type="text/javascript" src="assets/js/popup.js"></script>
 
 </html>
