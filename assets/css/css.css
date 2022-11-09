@@ -848,12 +848,12 @@ h4 {
   
   /* Change the backgborder-bottom-color: red;round color on mouse-over */
   .header a:hover {
-	background-color: dodgerblue;
+	background-color: #10a4fc;
   }
   
   /* Style the active/current link*/
   .header a.active {
-	background-color: dodgerblue;
+	background-color: #10a4fc;
 	color: white;
   }
   
