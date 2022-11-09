@@ -805,8 +805,7 @@ h4 {
 .header {
 	color: #fbfbfb;
 	background-color: #161717;
-	overflow: hidden;
-	border: solid 0.1em #161717;
+	border: solid 2px #161717;
 	border-bottom-color: rgb(255, 255, 255);
 	height: 85px;
     line-height: 85px;
@@ -821,8 +820,8 @@ h4 {
 	text-decoration: none;
 	font-size: 18px;
 	line-height: 25px;
-	height: 85px;
-	line-height: 85px;
+	height: 81px;
+	line-height: 81px;
 	text-align: center;
 	padding: 0 40px;
 	font-family: 'Roboto' ,sans-serif;
@@ -838,12 +837,8 @@ h4 {
 	font-family: 'Titillium Web', sans-serif;
   }
 
-  .header a.img{
-
-  }
-
   .header a.logo:hover{
-	background-color: #161717;
+	background-color: transparent;
   }
   
   /* Change the backgborder-bottom-color: red;round color on mouse-over */
