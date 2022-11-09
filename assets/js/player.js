@@ -175,12 +175,12 @@ var Audio = {
 
 		$.getJSON('https://radio.cnr.ng/game_server_data/djstatus.json?ts='+ Math.round((new Date()).getTime() / 1000), function(data) {
 			var DJ = data.currentdj;
-			if(DJ === "No Active DJ"){
+			if(DJ == "No Active DJ"){
 			$("#current-dj").html('<i class="fa fa-user"></i>Auto DJ');
 			}
 			else{
-			$("#current-dj").html('<i class="fa fa-user"></i> DJ ' + `${DJ}`);
-		}
+			$("#current-dj").html('<i class="fa fa-user"></i>DJ ' + `${DJ}`);
+			}
 		});
 		},1000);
 
