@@ -8,6 +8,7 @@ body {
 	color: #444;
 	background: url('../images/bg.png') #000;
 	background-repeat: no-repeat;
+	background-size: cover;
 	font: 300 18px/18px Roboto, sans-serif;
 	min-height: 100vh;
 	display: flex;
