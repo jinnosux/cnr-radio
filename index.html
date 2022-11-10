@@ -29,7 +29,11 @@
 </head>
 
 <body>
-    <div class="header">
+          
+    <div class="intro">
+        <a href="https://cnr.ng" target=_blank><img src="assets/images/logo.png"></img></a>
+    </div>
+    <!-- <div class="header">
         <a href="https://cnr.ng/" target="_blank" class="logo"><img src="./assets/images/logo.png" style="width:230px;padding:9px;"></a>
         <div class="header-right">
           <a href="https://forums.cnr.ng/" target="_blank">Forums</a>
@@ -37,29 +41,6 @@
           <a href="#dj" onclick="show2()">our DJ team</a>
         </div>
     </div>
-<!--       
-    <div class="intro">
-        <a href="https://cnr.ng" target=_blank><img src="assets/images/logo.png"></img></a>
-    </div> -->
-    <div class="popup" id="popup1">
-        <h3 style="margin-top: 30px;">Events</h3>
-        <h4>(Rashon's) Punkery Show - 4:20 EST</h4>
-        <h3 style="margin-top: 30px;">In-game commands</h3>
-        <h4>Use <span>/radio</span> in-game to tune in</h4>
-        <h4>Use <span>/radioinfo</span> to find out about current dj and song</h4>
-        <a href="#" onclick="hide1()">Close</a>
-      </div>
-      
-      <div class="popup" id="popup2">
-        <h3>Radio mgmt</h3>
-        <h4>Tony.Solar | Decoy</h4>
-        <h3>DJ team</h3>
-        <h4>Assassin | BBird | Codeshadow | Conceited  </h4>
-        <h4>Decoy | foxyproxy101 | Ismaxl_ | Fusion</h4>
-        <h4>jftw | jinnosuke | Luffy | Lucas2231</h4>
-        <h4>Oggy | Rashon | Tony.Solar | vlaj</h4>
-        <a href="#" onclick="hide2()">Close</a>
-      </div>
     
 
     <div class="mhn-wrapper">
@@ -99,6 +80,34 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="buttons">
+        <div class="left_button"  onclick="show1()">
+            <h3>Events / Info</h3>
+        </div>
+        <div class="right_button" onclick="show2()">
+            <h3>Our DJ Team</h3>
+        </div>
+
+        <div class="popup" id="popup1">
+            <h3 style="margin-top: 30px;">Events</h3>
+            <h4>(Rashon's) Punkery Show - 4:20 EST</h4>
+            <h3 style="margin-top: 30px;">In-game commands</h3>
+            <h4>Use <span>/radio</span> in-game to tune in</h4>
+            <h4>Use <span>/radioinfo</span> to find out about current dj and song</h4>
+            <a href="#" onclick="hide1()">Close</a>
+          </div>
+          
+          <div class="popup" id="popup2">
+            <h3>Radio mgmt</h3>
+            <h4>Tony.Solar | Decoy</h4>
+            <h3>DJ team</h3>
+            <h4>Assassin | BBird | Codeshadow | Conceited  </h4>
+            <h4>Decoy | foxyproxy101 | Ismaxl_ | Fusion</h4>
+            <h4>jftw | jinnosuke | Luffy | Lucas2231</h4>
+            <h4>Oggy | Rashon | Tony.Solar | vlaj</h4>
+            <a href="#" onclick="hide2()">Close</a>
+          </div>
     </div>
     <footer class="footer">
         <p>2020-2022 © Cops and Robbers: Next Generation. All Rights Reserved. <br>
