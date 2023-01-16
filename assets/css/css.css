@@ -636,6 +636,7 @@ h4 {
 
 
 .intro {
+	display: none;
 	text-align: center;
 }
 
@@ -668,6 +669,9 @@ h4 {
 
 
 @media only screen and (max-width: 1000px) {
+	.intro{
+		display: block;
+	}
 	.intro img {
 		width: 255px;
 		padding-top: 30px;
@@ -688,6 +692,9 @@ h4 {
 	}
 	.right-section{
 		display: none;
+	}
+	.header{
+		display: none;;
 	}
 }
 
@@ -874,6 +881,7 @@ h4 {
 
   #popup1{
 	display: none;
+	height: 280px;
   }
   #popup2{
 	display: none;
@@ -885,7 +893,7 @@ h4 {
 	width: 350px;
 	left: 50%;
 	margin-left: -175px;
-	height: 300px;
+	height: 340px;
 	top: 50%;
 	margin-top: -100px;
 	background: #161717;
@@ -895,7 +903,7 @@ h4 {
   }
 
   .popup h3{
-	margin-top: 20px;
+	margin-top: 30px;
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 24px;
 	color: #FFF;
@@ -933,6 +941,7 @@ h4 {
   color: rgb(236, 57, 57);
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 
