@@ -65,6 +65,7 @@ body {
 	display: flex;
 	flex-grow: 1;
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .left-section {
@@ -118,7 +119,7 @@ h4 {
 	height: 500px;
 	padding: 15px 15px 0px 15px;
 	position: relative;
-	margin: 30px auto 30px;
+	margin: auto auto;
 	background: rgba(0, 0, 0, .7);
 	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, .22), 0 25px 55px 0 rgba(0, 0, 0, .21);
 }
@@ -664,6 +665,7 @@ h4 {
 	font-size: 12px;
 	color: #ecf0f1;
 	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
