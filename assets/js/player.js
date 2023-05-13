@@ -1,9 +1,13 @@
 $(function(){
+	if (!localStorage.player_volume) { console.log("Setting Default"); localStorage.player_volume = "0.5"; /*Set default volume value*/ }
+	console.log(localStorage.player_volume);
 	Audio.init();
 });
 
 var intval;
 var autoplay;
+let mp3 = "https://radio.cnr.ng/broadband/stream";
+
 var Audio = {
 	init:function(){
 		this.info.init();
@@ -37,12 +41,12 @@ var Audio = {
 				$(this).html('<div class="album-thumb pull-left">'+albumart+'</div><div class="songs-info pull-left">'+title+'<div class="songs-detail">'+artist+' - '+album+'</div></div></div>');
 			});
 		},
-		load:function(id,album,artist,title,albumart,mp3){
+		load:function(id,album,artist,title,albumart){
 			var currentTrack, totalTrack;
 			totalTrack = $('.play-list>a').length;
 			currentTrack = $('.play-list a').index($('.play-list .active'))+1;
 			$('.play-position').text(currentTrack+' / '+totalTrack);
-			albumart=albumart?'<img src="'+albumart+'">':''; 
+			albumart=albumart?'<img src="'+albumart+'">':'';
 			album=album?album:'';
 			title=title?title:'Loading...';
 			artist=artist?artist:'';
@@ -50,12 +54,13 @@ var Audio = {
 			$('.current-info .song-album').html('<i class="fa fa-music"></i> '+album);
 			$('.current-info .song-title').html('<i class="fa fa-headphones"></i> '+title);
 			$('.current-info .song-artist').html('<i class="fa fa-user"></i> '+artist);
-			if(mp3)
-			$('.audio').html('<audio class="music" data-id="'+id+'" src="'+mp3+'"></audio>');
+			if(mp3)	$('.audio').html('<audio class="music" data-id="'+id+'" src="'+mp3+'"></audio>');
+
+			$('.music').prop('volume',localStorage.player_volume);
 		}
 	},
 	player:function(){
-		var id, album, artist, albumart, title, mp3;
+		var id, album, artist, albumart, title;
 		$('.play-list .play').each(function(){
 			$(this).on('click',function(e){
 				e.preventDefault();
@@ -67,8 +72,7 @@ var Audio = {
 				artist = $(this).data('artist');
 				albumart = $(this).data('albumart');
 				title = $(this).data('title');
-				mp3 = $(this).data('url');
-				Audio.info.load(id,album,artist,title,albumart,mp3);
+				Audio.info.load(id,album,artist,title,albumart);
 				Audio.play($('.music'));
 				$('.music').prop('volume',$('.volume').val());
 				Audio.playlist.hide();
@@ -103,6 +107,9 @@ var Audio = {
 			e.preventDefault();
 			clearInterval(intval);
 			Audio.stop($('.music'));
+			$('.audio').html('<audio class="music" data-id="'+id+'" src="'+mp3+'"></audio>');
+			$('.music').prop('volume',$('.volume').val());
+			$(this).attr('data-css',$('.volume').val());
 			$('.music')[0].currentTime=0;
 			$('.progress .bar').css('width',0);
 		});
@@ -111,6 +118,7 @@ var Audio = {
 			vol = $(this).val();
 			$(this).attr('data-css',vol);
 			$('.music').prop('volume',vol);
+			localStorage.player_volume = vol;
 		});
 		$('.prev').on('click',function(e){
 			var index, firstIndex;
@@ -167,10 +175,10 @@ var Audio = {
 
 		bar = (current/e[0].duration)*100;
 		$('.progress .bar').css('width',bar+'%');
-		
-        $.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
+
+        	$.getJSON('https://radio.cnr.ng/broadband/status-json.xsl', function(data) {
 			$("#current-info").html('<i class="fa fa-headphones"></i> ' + `${data.icestats.source.title}`);
-            $("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
+            		$("#listeners").html(`Listeners: ${data.icestats.source.listeners}`)
 		});
 
 		$.getJSON('https://radio.cnr.ng/game_server_data/djstatus.json?ts='+ Math.round((new Date()).getTime() / 1000), function(data) {
@@ -229,6 +237,7 @@ var Audio = {
 			volume = 1;
 		}
 		e.prop('volume',volume);
+		localStorage.player_volume = volume;
 	},
 	volumeDown:function(e){
 		var volume = e.prop('volume')-0.2;
@@ -236,6 +245,7 @@ var Audio = {
 			volume = 0;
 		}
 		e.prop('volume',volume);
+		localStorage.player_volume = volume;
 	},
 	prev:function(){
 		var curr = $('.music').data('id');
